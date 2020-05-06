@@ -1,0 +1,109 @@
+<link rel="stylesheet" href="../css/style.css">
+<section class="post">
+	<header class="post-title">Khái Niệm Cơ Bản</header>
+	<main class="post-body">
+		<article class="article">
+			<h2 class="article-title">1.Thuộc Tính Của Thẻ</h2>
+			<div class="article-main">
+        <p>
+          - <b>Thuộc tính</b> có tác dụng bổ sung thêm thông tin cho thẻ, nó luôn được đặt trong <b>thẻ mở</b>.<br>
+          - Mọi thẻ <b>HTML</b> đều có thể thêm các thuộc tính. Một thẻ có thể có nhiều thuộc tính.<br>
+          - Thuộc tính thường có cấu trúc: <span class="attr code">tên thuộc tính="giá trị"</span>.<br>
+          - Ví dụ về thuộc tính trong thẻ:
+        </p>
+        <div class="code">
+          <span class="html">a <span class="attr">href="<u>https://www.facebook.com</u>" id="link"</span></span>Facebook<span class="html">/a</span>
+        </div>
+        <h1>Giải Thích</h1>
+        <ul>
+          <li>Ví dụ trên có 2 thuộc tính là <span class="attr code">href</span> và <span class="attr code">id</span>.</li>
+          <li><span class="attr code">href</span> là thuộc tính chứa địa chỉ liên kết đến một đường dẫn nào đó.</li>
+          <li><span class="attr code">id</span> là thuộc tính định danh duy nhất cho một thẻ, giá trị của <span class="attr code">id</span> không được trùng nhau.</li>
+        </ul>
+        <h1>Một Số Các Thuộc Tính Phổ Biến</h1>
+        <ul>
+          <li>Thuộc tính <span class="attr code">id</span>.</li>
+          <li>Thuộc tính <span class="attr code">class</span> cũng giống như <span class="attr code">id</span>, nó dùng để đặt tên cho thẻ, nhưng một <span class="attr code">class</span> chúng ta có thể đặt cho nhiều thẻ khác nhau.</li>
+          <li>Thuộc tính <span class="attr code">style</span> dùng để thiết lập việc định dạng, trang trí cho một thẻ.</li>
+        </ul>
+			</div>
+    </article>
+    <article class="article">
+      <h2 class="article-title">2. Một số thẻ HTML</h2>
+      <div class="article-main">
+        <p>Dưới đây là một số thẻ HTML cơ bản:</p>
+        
+        <table class="table">
+          <tr>
+            <th>Tên Phần Tử</th>
+            <th>Mô Tả</th>
+            <th>Ví Dụ</th>
+          </tr>
+            <!-- comment -->
+          <tr>
+            <td><span class="html cmt">!--  --</span></td>
+            <td>Dùng để comment, không hiển thị ra màn hình</td>
+            <td><span class="html cmt">!-- <span class="html">h1</span>ẩn<span class="html">/h1</span> --</span></td>
+          </tr>
+            <!-- p tag -->
+          <tr>
+            <td><span class="html">p</span></td>
+            <td>Định nghĩa một đoạn văn</td>
+            <td><span class="html">p</span>Đây là một đoạn văn bản<span class="html">/p</span></td>
+          </tr>
+            <!-- h1 - h6 -->
+          <tr>
+            <td><span class="html">h1</span> ... <span class="html">h6</span></td>
+            <td>Định nghĩa tiêu đề</td>
+            <td><span class="html">h2</span>2. Một số thẻ HTML<span class="html">/h2</span></td>
+          </tr>
+            <!-- i tag -->
+          <tr>
+            <td><span class="html">i</span></td>
+            <td>Chữ nghiêng cho phần văn bản</td>
+            <td><span class="html">i</span>Chữ nghiêng<span class="html">/i</span></td>
+          </tr>
+            <!-- b tag -->
+          <tr>
+            <td><span class="html">b</span></td>
+            <td>Chữ in đậm cho phần văn bản</td>
+            <td><span class="html">b</span>Chữ Đậm<span class="html">/b</span></td>
+          </tr>
+            <!-- br tag -->
+          <tr>
+            <td><span class="html">br</span></td>
+            <td>Ngắt dòng trong đoạn văn bản</td>
+            <td><span class="html">p</span>Ngắt dòng <span class="html">br</span> đoạn văn bản<span class="html">/p</span></td>
+          </tr>
+            <!-- img tag -->
+          <tr>
+            <td><span class="html">img</span></td>
+            <td>Thẻ định nghĩa hình ảnh. Trong đó <span class="attr">src</span> là đường dẫn của ảnh</td>
+            <td><span class="html">img <span class="attr">src="https://images.unsplash.com/photo-149"</span></span></td>
+          </tr>
+            <!-- a tag -->
+          <tr>
+            <td><span class="html">a</span></td>
+            <td>Thẻ định nghĩa liên kết (link), trong đó <span class="attr">href</span> chứa liên kết</td>
+            <td><span class="html">a <span class="a">href="https://google.com"</span></span>link<span class="html">/a</span></td>
+          </tr>
+            <!-- style -->
+          <tr>
+            <td><span class="html">style</span></td>
+            <td>Chứa các thiết lập CSS</td>
+            <td><span class="html">style</span> <span class="prop">a</span> {<span class="value">color: #fff</span>;} <span class="html">/style</span></td>
+          </tr>
+            <!-- script -->
+          <tr>
+            <td><span class="html">script</span></td>
+            <td>Chứa các thiết lập script (kịch bản) trong trình duyệt, gồm các đoạn mã xử lý, trong đó <span class="attr">src</span> là đường dẫn các file script</td>
+            <td><span class="html">script <span class="attr">src="javascript.js"</span></span><span class="html">/script</span></td>
+          </tr>
+        </table>
+      </div>
+    </article>
+	</main>
+</section>
+
+
+<script defer src="../js/javascript.js"></script>

@@ -1,0 +1,243 @@
+$red-color: #c02626;
+$red-color-blur: #c02626b6;
+$prop-color: rgb(202, 161, 106);
+$tag-color: #0e2db9;
+$attr-color: #5fb629;
+
+@mixin breakpoint($point) {
+  @if $point==small {
+    @media (max-width: 768px) {
+      @content;
+    }
+  }
+
+  @if $point==tablet {
+    @media (max-width: 900px) {
+      @content;
+    }
+  }
+}
+
+/* post */
+
+.post {
+  font: 17px/1.7 Arial;
+  display: block;
+  margin: 0 1em;
+  padding: 1em;
+  text-align: justify;
+
+  &-title {
+    text-align: center;
+    font-size: 40px;
+  }
+  
+  @include breakpoint(small) {
+    font: 15px/1.5 Arial;
+    margin: 0;
+    padding: 0;
+
+    &-title {
+      font-size: 25px;
+    }
+  }
+}
+
+/* article */
+
+.article {
+  margin-bottom: 1em;
+
+  &-title {
+    font-size: 25px;
+    color: $red-color;
+  }
+
+  &-main {
+    padding-left: 1em;
+  }
+
+  @include breakpoint(small) {
+
+    &-main {
+      padding: .5rem;
+    }
+
+    &-title {
+      font-size: 20px;
+    }
+  }
+}
+
+ul>li {
+  margin: 10px 0;
+}
+
+figure {
+  margin: 1em;
+
+  &>img {
+    max-width: 70vw;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+    box-shadow: 0 0 5px 1px #a7a7a7;
+  }
+
+  figcaption {
+    margin-top: 5px;
+    text-align: center;
+    font-style: italic;
+  }
+}
+
+/* table */
+table {
+  width: 100%;
+}
+
+
+.table {
+  border: 1px solid rgb(194, 178, 178);
+  border-collapse: collapse;
+
+  th {
+    @extend .table;
+    text-align: center;
+    background-color: #b39b18;
+  }
+
+  td {
+    @extend .table;
+    text-align: justify;
+    padding: 5px 10px;
+
+    &:nth-child(1) {
+      text-align: center;
+    }
+  }
+}
+
+/* try it frame */
+.try-it {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+
+  @include breakpoint(tablet) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+
+/* code */
+
+.code {
+  background-color: #e0e0e0;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: monospace;
+  overflow-y: auto;
+}
+
+.code.try {
+  width: 45%;
+  padding: 1em;
+
+  @include breakpoint(tablet) {
+    width: 100%;
+  }
+}
+
+/* result */
+#try {
+  width: 7%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column-reverse;
+  font-size: .6rem;
+  margin: auto 10px;
+
+  .btn {
+    display: block;
+    margin-bottom: 10px;
+    border-top: 20px solid transparent;
+    border-left: 40px solid #3f3f3fda;
+    border-bottom: 20px solid transparent;
+    cursor: pointer;
+
+    &:hover {
+      border-left: 40px solid #313131;
+    }
+  }
+
+  @include breakpoint(tablet) {
+    width: 100%;
+    flex-direction: row;
+    margin: 10px;
+    .btn {
+      margin: 0 0 0 10px;
+    }
+  }
+}
+
+.result {
+  width: 45%;
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s ease-out;
+
+  img {
+    display: block;
+    width: 100%;
+    user-select: none;
+  }
+
+  @include breakpoint(tablet) {
+    width: 100%;
+    display: none;
+  }
+}
+
+.visible {
+  display: initial;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* html tag */
+
+.html {
+  color: $red-color;
+}
+
+.html::before, .html::after {
+  color: $tag-color;
+  content: "<";
+}
+
+.html::after {
+  content: ">";
+}
+
+.attr {
+  color: $attr-color;
+}
+
+.cmt {
+  color: $tag-color;
+}
+
+/* css */
+
+.prop {
+  color: $prop-color;
+}
+
+.value {
+  color: $tag-color;
+}

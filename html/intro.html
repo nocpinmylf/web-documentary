@@ -1,0 +1,83 @@
+<link rel="stylesheet" href="../css/style.css">
+
+<section class="post">
+	<header class="post-title">Nhập Môn HTML, CSS Và Javascript</header>
+	<main class="post-body">
+			<!-- Giới thiệu -->
+		<article class="article">
+			<h2 class="article-title">1.Giới Thiệu</h2>
+			<div class="article-main">
+				<p>
+					- <b>HTML</b> là ngôn ngữ đánh dấu siêu văn bản, được tổ chức theo các <b>tag</b> (thẻ), kết hợp với <b>CSS</b> và <b>Javascript</b> để thiết kế Website trên World Wide Web (mạng lưới toàn cầu WWW).<br>
+					- Được viết trong file có đuôi dạng <span class="code">.html</span> hoặc <span class="code">.htm</span>, ví dụ: <span class="code">index.html</span>. Nó cần 1 trình duyệt web để chạy thử, ví dụ <b>Opera</b>, <b>Chrome</b> hoặc <b>Safari</b>.<br>
+					- Để tạo và chỉnh sửa code <b>HTML</b>, ta thường dùng các <i>text editor</i> hoặc các <i>IDE</i> (Môi trường phát triển tích hợp). <br>
+					- Một số <i>text editor</i> và <i>IDE</i> phổ biến hiện nay:
+				</p>
+				<ul> 
+					<li>Notepad hoặc Notepad++</li>
+					<li>Sublime Text 3</li>
+					<li>Visual Studio Code</li>
+				</ul>
+			</div>
+		</article>
+			<!-- Các tag -->
+		<article class="article">
+			<h2 class="article-title">2.Thẻ HTML (HTML Tags)</h2>
+			<div class="article-main">
+				<p>Các thẻ HTML nằm trong cặp ngoặc đóng mở <b><></b>, có cấu trúc:</p>
+				<div class="code">
+					<span class="html">Tên thẻ</span>Nội Dung<span class="html">/Tên thẻ</span>
+				</div>
+				<p>
+					- Trong đó, <span class="html code">Tên thẻ</span> là thẻ mở và <span class="html code">/Tên thẻ</span> là thẻ đóng.<br>
+					- Có một số thẻ đặc biệt chỉ có thẻ mở hay còn gọi là thẻ đơn. Ví dụ: <span class="html code">br</span> là một thẻ đơn dùng để ngắt dòng.
+				</p>
+			</div>
+		</article>
+			<!-- Cấu trúc trang -->
+		<article class="article">
+			<h2 class="article-title">3.Cấu Trúc Trang HTML</h2>
+			<div class="article-main">
+				<p>
+					- Một trang HTML đều phải khai báo thẻ <span class="html code">!DOCTYPE html</span> đầu tiên.<br>
+					- Tiếp theo sẽ đến thẻ <span class="html code">html</span>, mọi thẻ khác sẽ được nằm bên trong cặp thẻ này.<br>
+				</p>
+				<div class="try-it">
+						<!-- code -->
+					<div class="code try">
+						<span class="html">!DOCTYPE html</span><br>
+						<span class="html">html <span class="attr">lang="en"</span></span><br>
+						<span class="html">head</span><br>&ensp;
+							<span class="html">title</span>Tiêu Đề Trang<span class="html">/title</span><br>
+						<span class="html">/head</span><br>
+						<span class="html">body</span><br>&ensp;
+							<span class="html">h1</span>Trang Web HTML<span class="html">/h1</span><br>
+						<span class="html">body</span><br>
+						<span class="html">/html</span>
+					</div>
+						<!-- try btn -->
+					<div id="try">
+						<span>Kết Quả</span>
+						<span class="btn"></span>
+					</div>
+						<!-- result -->
+					<div class="code result">
+						<img src="../res/img/into-p1.png" alt="abc">
+				</div>
+			</div>
+			<h1>Giải Thích</h1>
+				<ul>
+					<li><span class="html code">!DOCTYPE html</span>: Khai báo cho trình duyệt biết phiên bản HTML được sử dụng, ở đây là HTML5.</li>
+					<li><span class="html code">html <span class="attr">lang="en"</span></span>: Đây là phần tử gốc của 1 trang HTML.</li>
+					<li><span class="html code">head</span>: Chứa các thẻ meta và thông tin cho trang web như title, style(CSS) ...</li>
+					<li><span class="html code">title</span>: Tiêu đề của trang web.</li>
+					<li><span class="html code">body</span>: Phần thân, chứa nội dung hiển thị trên trang web.</li>
+					<li><span class="html code">h1</span>: Đây là 1 tag được định nghĩa tiêu đề với cỡ chữ lớn, in đậm.</li>
+				</ul>
+		</article>
+
+	</main>
+	<!-- <footer class="post-footer"></footer> -->
+</section>
+
+<script defer src="../js/javascript.js"></script>
