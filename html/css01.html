@@ -1,5 +1,4 @@
 <link rel="stylesheet" href="../css/style.css">
-
 <section class="post">
 	<header class="post-title">Nhập Môn CSS</header>
 	<main class="post-body">
@@ -7,12 +6,258 @@
 		<article class="article">
 			<h2 class="article-title">1.Giới Thiệu</h2>
 			<div class="article-main">
-
+        <p>
+          - CSS có thể nói là ngôn ngữ trang trí cho HTML.<br>
+          - Nếu ví HTML là khung xương thì CSS là da thịt.<br>
+          - Ta có thể dùng CSS để thêm màu sắc, chỉnh sửa font chữ, căn vị trí... giúp cho trang web trở nên đẹp và sinh động hơn.<br>
+          - HTML và CSS luôn đi đôi với nhau để tạo nên một giao diện web tuyệt vời.
+				</p>
+					<!-- so sánh -->
+				<figure class="compare">
+					<div>
+						<img src="../res/img/css-beforeCSS.png" alt="Before">
+						<img src="../res/img/css-afterCSS.png" alt="After">
+					</div>
+					<figcaption>Sự khác biệt giữa có và không có CSS</figcaption>
+				</figure>
 			</div>
 		</article>
+      <!-- Cú pháp -->
+    <article class="article">
+			<h2 class="article-title">2.Cú Pháp</h2>
+			<div class="article-main">
+				<p>- Cú pháp trong CSS được viết như sau: </p>
+				<figure>
+					<img src="../res/img/css-ruleset.png" alt="Rule">
+				</figure>
+				<ul>
+					<li>Bộ chọn (selector): Dùng để tìm các phần tử trong HTML, được giải thích kỹ hơn <a href="#selector">ở dưới</a>.</li>
+					<li>Thuộc tính (property): Đây là kiểu mà bạn định style cho phần tử selector. Ví dụ: color, width, border...</li>
+					<li>Giá trị (value): Giá trị của thuộc tính. Ví dụ: red, 10px, 2%... </li>
+					<li>Mỗi thuộc tính đều đi kèm với ít nhất 1 giá trị, và cách nhau bởi một dấu <span class="code">;</span></li>
+				</ul>
+			</div>
+    </article>
+      <!-- các kiểu style -->
+    <article class="article">
+			<h2 class="article-title">3.Các Kiểu Style</h2>
+			<div class="article-main dual-col">
+				<div>
+					<p>Trong CSS, có 3 loại cơ bản là: </p>
+					<ul>
+							<!-- inline -->
+						<li>
+							<p>Inline CSS: Được viết trực tiếp bên trong thẻ HTML</p>
+							<p class="code"><span class="html">h1 <span class="attr">style="<span class="prop">color</span>: <span class="value" style="color: red;">red</span>;"</span></span>Màu Đỏ<span class="html">/h1</span></p>
+						</li>
+							<!-- internal -->
+						<li>
+							<p>Internal CSS: Được viết trong thẻ <span class="html">style</span>, nằm ở bên trong file HTML</p>
+							<pre class="code">
+...
+<span class="html">head</span>
+ <span class="html">style</span>
+	<span class="attr">h1 {</span>
+	 <span class="prop">color: </span> <span class="value" style="color: red;">red;</span>
+	<span class="attr">}</span>
+ <span class="html">/style</span>
+<span class="html">/head</span>
+...
+							</pre>
+						</li>
+							<!-- external -->
+						<li>
+							<p>External CSS: Được viết trong file CSS và nhúng vào trong HTML bằng thẻ <span class="html">link</span></p>
+							<p class="code"><span class="html">link <span class="attr">rel="stylesheet" href="style.css"</span></span></p>
+						</li>
+					</ul>
+				</div>
 
+				<figure>
+					<img src="../res/img/typeCSS.png" alt="Các Kiểu CSS">
+				</figure>
 
-	</main>
+			</div>
+    </article>
+      <!-- các selector -->
+    <article class="article" id="selector">
+			<h2 class="article-title" >4.Các Selector Cơ Bản</h2>
+			<div class="article-main">
+				<p>- CSS có nhiều loại selector, nhưng có 3 loại cơ bản nhất:</p>
+				<ol>
+					<li>
+						<p><b>Id</b>: Sử dụng thuộc tính id để chọn</p>
+						<div class="code html-css">
+							<div>
+								<h2>HTML</h2>
+								<pre>
+<span class="html">span <span class="attr">id="tieude"</span></span>Tiêu Đề<span class="html">/span</span>
+								</pre>
+							</div>
+
+							<div>
+								<h2>CSS</h2>
+								<pre>
+<span class="attr">#tieude {</span>
+  <span class="prop">text-align: </span><span class="value">center;</span>
+  <span class="prop">margin: </span><span class="value">10px 15px;</span>
+<span class="attr">}</span>
+								</pre>
+							</div>
+						</div>
+					</li>
+					<li>
+						<p><b>Class</b>: Sử dụng thuộc tính class để chọn</p>
+						<div class="code html-css">
+							<div>
+								<h2>HTML</h2>
+								<pre>
+<span class="html">span <span class="attr">class="tieude"</span></span>Tiêu Đề<span class="html">/span</span>
+								</pre>
+							</div>
+
+							<div>
+								<h2>CSS</h2>
+								<pre>
+<span class="attr">.tieude {</span>
+  <span class="prop">display: </span><span class="value">block;</span>
+  <span class="prop">padding: </span><span class="value">10px 15px;</span>
+<span class="attr">}</span>
+								</pre>
+							</div>
+						</div>
+					</li>
+					<li>
+						<p><b>Tag</b>: Sử dụng tên tag để chọn</p>
+						<div class="code html-css">
+							<div>
+								<h2>HTML</h2>
+								<pre>
+<span class="html">span <span class="attr"></span></span>Tiêu Đề<span class="html">/span</span>
+								</pre>
+							</div>
+
+							<div>
+								<h2>CSS</h2>
+								<pre>
+<span class="attr">span {</span>
+<span class="prop">text-align: </span><span class="value">center;</span>
+<span class="prop">margin: </span><span class="value">10px 15px;</span>
+<span class="attr">}</span>
+								</pre>
+							</div>
+						</div>
+					</li>
+				</ol>
+			</div>
+    </article>
+      <!-- ví dụ -->
+    <article class="article">
+			<h2 class="article-title">5.Ví Dụ</h2>
+			<div class="article-main">
+          <!-- vẽ hình tròn -->
+        <p>- Vẽ hình tròn: </p>
+				<div class="try-it">
+						<!-- code -->
+					<pre class="code try">
+<span class="cmt">//Vẽ Hình Tròn</span>
+<span class="cmt">//HTML</span>
+<span class="html">div <span class="attr">class="circle"</span></span><span class="html">/div</span>
+
+<span class="cmt">//CSS</span>
+<span class="attr">.circle {</span>
+  <span class="prop">display: </span><span class="value">block;</span><span class="cmt">//Hiển thị dưới dạng khối</span>
+  <span class="prop">width: </span><span class="value">100px;</span><span class="cmt">//Chiều rộng: 100px</span>
+  <span class="prop">height: </span><span class="value">100px;</span><span class="cmt">//Chiều cao: 100px</span>
+  <span class="prop">border-radius: </span><span class="value">50%;</span><span class="cmt">//Bo tròn các góc 50%</span>
+  <span class="prop">background-color: </span><span class="value">blue;</span><span class="cmt">//Màu nền: xanh dương</span>
+<span class="attr">}</span>
+					</pre>
+						<!-- try btn -->
+					<div id="try">
+						<span>Kết Quả</span>
+						<span class="btn"></span>
+					</div>
+						<!-- result -->
+					<div class="code result">
+						<div class="code">
+              <div style="width: 100px;
+              height: 100px;
+              display: block;
+              border-radius: 50%;
+              background-color: blue;"></div>
+
+						</div>
+					</div>
+        </div>
+          <!-- tạo một nút bấm -->
+        <p>- Tạo nút bấm: </p>
+        <div class="try-it">
+          <!-- code -->
+        <pre class="code try">
+<span class="cmt">//Vẽ Hình Tròn</span>
+<span class="cmt">//HTML</span>
+<span class="html">button</span>Nút Bấm<span class="html">/button</span>
+
+<span class="cmt">//CSS</span>
+<span class="attr">button {</span>
+  <span class="prop">width: </span><span class="value">100px;</span><span class="cmt">//Chiều rộng: 100px</span>
+  <span class="prop">height: </span><span class="value">50px;</span><span class="cmt">//Chiều cao: 50px</span>
+  <span class="prop">background-color: </span><span class="value">black;</span><span class="cmt">//Màu nền: đen</span>
+  <span class="prop">color: </span><span class="value">yellow;</span><span class="cmt">//Màu chữ: vàng</span>
+  
+  <span class="attr">}</span>
+        </pre>
+          <!-- try btn -->
+        <div id="try">
+          <span>Kết Quả</span>
+          <span class="btn"></span>
+        </div>
+          <!-- result -->
+        <div class="code result">
+          <button style="width: 100px;
+                        height: 50px;
+                        background-color: black;
+                        color: yellow;">Nút Bấm</button>
+        </div>
+        </div>
+          <!-- style text -->
+        <p>- Chỉnh sửa chữ</p>
+        <div class="try-it">
+          <!-- code -->
+        <pre class="code try">
+<span class="cmt">//Vẽ Hình Tròn</span>
+<span class="cmt">//HTML</span>
+<span class="html">h3 <span class="attr">id="text"</span></span>Đây là chữ đã được thêm CSS<span class="html">/h3</span>
+
+<span class="cmt">//CSS</span>
+<span class="attr">#text {</span>
+<span class="prop">text-align: </span><span class="value">center;</span><span class="cmt">//Căn chữ ra chính giữa</span>
+<span class="prop">font-size: </span><span class="value">20px;</span><span class="cmt">//Cỡ chữ: 20px</span>
+<span class="prop">text-decoration: </span><span class="value">underline;</span><span class="cmt">//Gạch chân chữ</span>
+<span class="prop">font-family: </span><span class="value">monospace;</span><span class="cmt">//Kiểu font chữ: monospace</span>
+<span class="attr">}</span>
+        </pre>
+          <!-- try btn -->
+        <div id="try">
+          <span>Kết Quả</span>
+          <span class="btn"></span>
+        </div>
+          <!-- result -->
+        <div class="code result">
+          <h3 style="text-align: center;
+                    font-size: 20px;
+                    text-decoration: underline;
+                    font-family: monospace;">Đây là chữ đã được thêm CSS</h3>
+        </div>
+      </div>
+			</div>
+		</article>
+  </main>
+  <footer class="post-footer">
+    <a href="html01.html" target="main">< Bài trước</a>
+		<a href="js01.html" target="main">Bài tiếp theo ></a>
+	</footer>
 </section>
 
 <script defer src="../js/javascript.js"></script>

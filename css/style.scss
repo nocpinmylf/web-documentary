@@ -3,6 +3,7 @@
 * {
   box-sizing: border-box;
   outline: 0;
+  scroll-behavior: smooth;
 }
 #html {overflow: hidden;}
 
@@ -66,16 +67,19 @@
 }
 
 .header {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
+  margin-top: 1em;
 
   .logo {
-    width: 30%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
 
     img {
-      width: 50px;
+      max-width: 50px;
+      margin-right: 10px;
     }
   }
   
@@ -86,6 +90,8 @@
     text-decoration: none;
     user-select: none;
     color: $red-color;
+    margin-block-start: 0;
+    margin-block-end: 0;
 
     &:hover {
       color: $red-color;
@@ -125,7 +131,7 @@ hr {
   }
   
   &:hover {
-    background-color: $red-color;
+    background-color: $red-color-blur;
     color: #ffffff;
   }
 }
@@ -143,7 +149,7 @@ hr {
     }
   
     &:hover {
-      background-color: $red-color;
+      background-color: $red-color-blur;
       color: #ffffff;
     }
   }

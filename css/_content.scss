@@ -1,8 +1,11 @@
 $red-color: #c02626;
 $red-color-blur: #c02626b6;
-$prop-color: rgb(202, 161, 106);
+$prop-color: rgb(156, 98, 22);
 $tag-color: #0e2db9;
-$attr-color: #5fb629;
+$cmt-color: #6d6c6c;
+$code-color: #e0e0e0;
+$attr-color: #529c23;
+
 
 @mixin breakpoint($point) {
   @if $point==small {
@@ -13,6 +16,12 @@ $attr-color: #5fb629;
 
   @if $point==tablet {
     @media (max-width: 900px) {
+      @content;
+    }
+  }
+
+  @if $point==bigtab {
+    @media (max-width: 1150px) {
       @content;
     }
   }
@@ -30,6 +39,20 @@ $attr-color: #5fb629;
   &-title {
     text-align: center;
     font-size: 40px;
+  }
+
+  &-footer {
+    display: flex;
+    justify-content: space-between;
+    a {
+      display: block;
+      width: 40%;
+      text-align: center;
+      color: #fff;
+      background-color: $red-color-blur;
+      text-decoration: none;
+      padding: 10px 15px;
+    }
   }
   
   @include breakpoint(small) {
@@ -55,6 +78,20 @@ $attr-color: #5fb629;
 
   &-main {
     padding-left: 1em;
+
+    &.dual-col {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @include breakpoint(bigtab) {
+      &.dual-col {
+        flex-direction: column;
+        justify-content: center;
+      }
+    }
   }
 
   @include breakpoint(small) {
@@ -77,7 +114,7 @@ figure {
   margin: 1em;
 
   &>img {
-    max-width: 70vw;
+    max-width: 90%;
     display: block;
     margin: auto;
     border-radius: 5px;
@@ -89,7 +126,44 @@ figure {
     text-align: center;
     font-style: italic;
   }
+
+  &.compare {
+    &>div {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      font-family: monospace;
+  
+      &>img {
+        display: block;
+        max-width: 45vw;
+        padding: 15px;
+        margin: 10px;
+        border-radius: 5px;
+        box-shadow: 0 0 5px 1px #a7a7a7;
+      }
+    }
+  
+    @include breakpoint(small) {
+      width: 100%;
+  
+      &>div {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+  
+        &>img {
+          display: block;
+          max-width: 90vw;
+          margin: 15px;
+        }
+      }
+    } 
+  }
+
 }
+
+
 
 /* table */
 table {
@@ -135,19 +209,42 @@ table {
 /* code */
 
 .code {
-  background-color: #e0e0e0;
-  padding: 5px;
+  background-color: $code-color;
+  padding: 5px 10px;
   border-radius: 5px;
   font-family: monospace;
-  overflow-y: auto;
-}
+  overflow-x: auto;
 
-.code.try {
-  width: 45%;
-  padding: 1em;
+  &.try {
+    width: 45%;
+    padding: 1em;
+  
+    @include breakpoint(tablet) {
+      width: 100%;
+    }
+  }
 
-  @include breakpoint(tablet) {
-    width: 100%;
+  &.html-css {
+    display: flex;
+    flex-direction: row;
+    overflow: auto;
+
+
+    h2 {
+      text-align: center;
+    }
+
+    &>div {
+      width: 50%;
+    }
+
+    @include breakpoint(bigtab) {
+      flex-direction: column;
+
+      &>div {
+        width: 100%;
+      }
+    }
   }
 }
 
@@ -187,6 +284,7 @@ table {
 .result {
   width: 45%;
   display: block;
+  padding: 1em;
   visibility: hidden;
   opacity: 0;
   transition: all .3s ease-out;
@@ -194,6 +292,7 @@ table {
   img {
     display: block;
     width: 100%;
+    box-shadow: 0 0 3px 0 #5c5858a8;
     user-select: none;
   }
 
@@ -229,7 +328,7 @@ table {
 }
 
 .cmt {
-  color: $tag-color;
+  color: $cmt-color;
 }
 
 /* css */

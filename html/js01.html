@@ -7,12 +7,99 @@
 		<article class="article">
 			<h2 class="article-title">1.Giới Thiệu</h2>
 			<div class="article-main">
+				<p>
+					- Khác với <b>HTML</b> và <b>CSS</b>, <b>Javascript</b> là ngôn ngữ lập trình, nó dùng để gia tăng tương tác giữa website và người dùng.
+					- Nói cách khác, nếu <b>HTML</b> và <b>CSS</b> là xương thịt thì <b>Javascript</b> là não bộ, nó giúp trang web trở nên có tính tương tác và khả năng vận hành.
+				</p>
+			</div>
+		</article>
+			<!-- why -->
+		<article class="article">
+			<h2 class="article-title">2.Tại sao phải học javascript?</h2>
+			<div class="article-main">
+				<p><b>HTML</b> và <b>CSS</b> đã đủ thiết kế rồi, còn học thêm <b>javascript</b> làm cái gì??? Một ví dụ đơn giản để làm rõ điều này:</p>
+				<p>Bạn có một blog cá nhân, trong blog đó có một mục là lịch hàng ngày, nếu không có <b>javascript</b> xử lý thì bạn sẽ phải sửa thủ công bằng tay, nhưng nếu bạn có rất nhiều trang thì chẳng lẽ phải ngồi sửa từng trang một? Yên tâm, <b>javascript</b> sẽ giúp bạn điều đó.</p>
+				<div class="try-it">
+					<!-- code -->
+				<pre class="code try">
+<span class="cmt">//Nút hiển thị thời gian</span>
+<span class="html">button <span class="attr">onclick="getTime();"</span></span>Lấy thời gian<span class="html">/button</span>
+<span class="html">p <span class="attr">id="time"</span></span><span class="html">/p</span><span class="cmt">//Thời gian sẽ xuất hiện tại đây</span>
+
+<span class="cmt">//Javascript</span>
+
+function getTime() {
+ let date = new Date();
+ let homnay = "Ngày Hôm Nay: " +
+  date.getDate() + "/" +
+  (date.getMonth() + 1) + "/" +
+  date.getFullYear() +
+  " || Thời gian: " +
+  date.getHours() + ":" +
+  date.getMinutes() + ":" +
+  date.getSeconds();
+ document.getElementById('time').innerText = homnay;
+}
+				</pre>
+					<!-- try btn -->
+				<div id="try">
+					<span>Kết Quả</span>
+					<span class="btn"></span>
+				</div>
+					<!-- result -->
+				<div class="code result">
+					<button onclick="getTime()">Lấy thời gian</button>
+					<p id="time"></p>
+				</div>
+			</div>
 
 			</div>
 		</article>
+			<!-- biến -->
+		<article class="article">
+			<h2 class="article-title">3.Biến (Valuable)</h2>
+			<div class="article-main">
+				<p>
+					- Biến được ví như là 1 hộp có tên chứa dữ liệu trong đó.<br>
+					- Giá trị trong thùng (biến) có thể thay đổi được.
+					- Cấu trúc cơ bản: <span class="code"><span class="html">kiểu biến</span> <span class="html">tên biến</span>;</span>, xem ví dụ <a href="#exam">bên dưới</a>.
+					-	Tên biến chỉ chứa chữ, số <span class="code">$</span> và <span class="code">_</span>, bắt đầu bằng chữ hoặc ký tự <span class="code">$</span> hoặc <span class="code">_</span>.<br>
+					- Mỗi biến có một tên duy nhất.<br>
+					- Gán giá trị cho biến bằng cách thêm dấu <span class="code">=</span>. VD: <span class="code">let ten = "Lê Minh Đức";</span>
+				</p>
+				
+				<p id="exam">Trong phần này mình cùng tìm hiểu về 3 loại biến trong <b>javascript</b></p>
+				<ul>
+					<li>
+						<p>Biến <span class="code">var</span>: biến toàn cục, truy cập được trong và ngoài hàm. VD khai báo biến tuổi: <span class="code">var tuoi;</span></p>
+					</li>
+					<li>
+						<p>Biến <span class="code">let</span>: biến cục bộ, truy cập trong phạm vi trong cặp <span class="code">{}</span>. VD khai báo biến tên <span class="code">let ten;</span></p>
+					</li>
+					<li>
+						<p>Biến <span class="code">const</span>: biến hằng, chỉ khai báo và gán 1 lần duy nhất, phạm vi toàn cục. VD khai báo biến π :<span class="code">const pi = 3.14;</span></p>
+					</li>
+				</ul>
+			</div>
+		</article>
+			<!-- function -->
+		<article class="article">
+			<h2 class="article-title">4.Hàm (function)</h2>
+			<div class="article-main">
 
+			</div>
+		</article>
+			<!-- dom -->
+		<article class="article">
+			<h2 class="article-title">4.HTML DOM</h2>
+			<div class="article-main">
 
+			</div>
+		</article>
 	</main>
+	<footer class="post-footer">
+    <a href="css01.html" target="main">< Bài trước</a>
+	</footer>
 </section>
 
 <script defer src="../js/javascript.js"></script>

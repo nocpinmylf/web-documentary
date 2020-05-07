@@ -45,5 +45,17 @@ collapseBTN.addEventListener('click', () => {
 	menu.classList.toggle('hide');
 });
 
-
+// get time
+function getTime() {
+	let date = new Date();
+	let string = "Ngày Hôm Nay: " +
+									date.getDate() + "/" +
+									(date.getMonth() + 1) + "/" +
+									date.getFullYear() +
+								" || Thời gian: " +
+									date.getHours() + ":" +
+									date.getMinutes() + ":" +
+									date.getSeconds();
+	document.getElementById('time').innerHTML = string;
+}
 //TODO: liên kết link 
