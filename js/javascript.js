@@ -58,4 +58,9 @@ function getTime() {
 									date.getSeconds();
 	document.getElementById('time').innerHTML = string;
 }
+
+//pre loading
+window.onload = () => {
+	document.getElementById('main').classList.remove('loading')
+}
 //TODO: liên kết link 
