@@ -444,7 +444,7 @@ table {
   padding: 50px;
   border-radius: 100%;
   color: #ffffff;
-  border: 8px solid #ffffff;
+  border: 8px solid #c5c5c5;
   border-left: 8px solid #c02626b6;
   -webkit-animation: spin 2s linear infinite;
           animation: spin 2s linear infinite;

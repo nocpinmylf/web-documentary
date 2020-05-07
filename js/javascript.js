@@ -31,19 +31,7 @@ for (let i = 0; i < tryBTN.length; i++) {
 	tryBTN[i].addEventListener('click', () => {
 		show(results[i]);
 	})
-	
 }
-
-// Nav bar
-const body = document.querySelector('.body');
-const menu = document.querySelector('.menu');
-const collapseBTN = document.getElementById('collapse-btn');
-
-collapseBTN.addEventListener('click', () => {
-	collapseBTN.classList.toggle('change');
-	body.classList.toggle('hide');
-	menu.classList.toggle('hide');
-});
 
 // get time
 function getTime() {
@@ -60,7 +48,27 @@ function getTime() {
 }
 
 //pre loading
-window.onload = () => {
-	document.getElementById('main').classList.remove('loading')
+const posts = document.getElementsByClassName('post');
+
+for (let i = 0; i < posts.length; i++) {
+	posts[i].addEventListener('load', completeLoading(posts[i]));
+}
+
+function completeLoading(e) {
+	e.classList.remove('loading');
 }
 //TODO: liên kết link 
+
+
+// Nav bar
+const body = document.querySelector('.body');
+const menu = document.querySelector('.menu');
+const collapseBTN = document.getElementById('collapse-btn');
+
+collapseBTN.addEventListener('click', toggleClass);
+
+function toggleClass() {
+	collapseBTN.classList.toggle('change');
+	body.classList.toggle('hide');
+	menu.classList.toggle('hide');
+}
