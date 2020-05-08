@@ -1,0 +1,99 @@
+#first {
+  display: flex;
+  flex-direction: row;
+  padding: 1rem 0;
+
+  @include breakpoint(tablet) {
+    flex-direction: column;
+  }
+}
+
+.interest {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+
+  h1 {
+    @include h1Style;
+
+  }
+
+  table {
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  &-item {
+    box-shadow: 0 0 3px 0 #5858585d;
+    transition: all .2s;
+
+    img {
+      width: 80px;
+    }
+    
+    td {
+      font-size: 17px;
+      padding: 15px;
+      margin: auto 0;
+    }
+
+    &:hover {
+      box-shadow: 0 0 5px 0 #585858;
+    }
+  }
+
+  @include breakpoint(tablet) {
+    width: 100%;
+
+    table {
+      width: 100%;
+    }
+
+    &-item {
+
+      img {
+        width: 50px;
+      }
+      
+      td {
+        font-size: 15px;
+        padding: 10px;
+      }
+    }
+  }
+}
+
+.advantage {
+  @extend .interest;
+  text-align: center;
+
+  &-list {
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+
+    &-group {
+      width: 40%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+  
+    &-item {
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 10px;
+  
+      img {
+        width: 27%;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+
+}

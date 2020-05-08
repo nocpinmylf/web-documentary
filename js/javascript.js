@@ -2,7 +2,13 @@ const postItem = document.getElementsByClassName('item');
 const subList = document.getElementsByClassName('sub');
 const results = document.querySelectorAll('.result');
 const tryBTN = document.querySelectorAll('#try .btn');
+const posts = document.getElementsByClassName('post');
+const body = document.querySelector('.body');
+const menu = document.querySelector('.menu');
 const listStatus = {};
+const collapseBTN = document.getElementById('collapse-btn');
+let navItems = document.querySelectorAll('[target="main"]');
+let dWidth = window.innerWidth;
 
 function hideSubItem (element, bool) {
 	if(bool) element.style.display = 'none';
@@ -44,31 +50,51 @@ function getTime() {
 									date.getHours() + ":" +
 									date.getMinutes() + ":" +
 									date.getSeconds();
-	document.getElementById('time').innerHTML = string;
+	document.getElementById('time').textContent = string;
 }
 
 //pre loading
-const posts = document.getElementsByClassName('post');
+function completeLoading(e) {
+	e.classList.remove('loading');
+}
 
 for (let i = 0; i < posts.length; i++) {
 	posts[i].addEventListener('load', completeLoading(posts[i]));
 }
 
-function completeLoading(e) {
-	e.classList.remove('loading');
-}
-//TODO: liên kết link 
-
-
 // Nav bar
-const body = document.querySelector('.body');
-const menu = document.querySelector('.menu');
-const collapseBTN = document.getElementById('collapse-btn');
-
-collapseBTN.addEventListener('click', toggleClass);
 
 function toggleClass() {
 	collapseBTN.classList.toggle('change');
 	body.classList.toggle('hide');
 	menu.classList.toggle('hide');
+}
+
+collapseBTN.addEventListener('click', toggleClass, false);
+
+if (dWidth <= 768) { // hide navbar when device width <= 768px
+	toggleClass();
+	for (let i = 0; i < navItems.length; i++) { // hide navbar onclick
+		console.log(navItems[i])
+		navItems[i].addEventListener('click', () => {
+			toggleClass();
+			activeLink(navItems[i]);
+		});
+	}
+}
+
+// activate link in navbar
+function activateLink(item) {
+	navItems = document.querySelectorAll('[target="main"]');
+	if(item != document.getElementsByClassName('logo')[0]) {
+		let actived = document.getElementsByClassName('active')[0];
+		item.classList.toggle('active');
+		actived.classList.toggle('active');
+	}
+}
+
+for (let i = 0; i < navItems.length; i++) {
+	navItems[i].addEventListener('click', () => {
+		activateLink(navItems[i]);
+	});
 }

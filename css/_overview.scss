@@ -1,0 +1,165 @@
+@mixin h1Style {
+  font-weight: normal;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      display: block;
+      content: '';
+      width: 60%;
+      height: 2px;
+      background-color: $red-color;
+      bottom: 0;
+      left: 20%;
+    }
+  @include breakpoint(tablet) {
+    font-size: 25px;
+  }
+}
+
+.overview {
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+}
+
+.greeting {
+  display: block;
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background: #fff url(../res/img/banner.png) no-repeat center/ cover;
+
+  h1 {
+    display: block;
+    background-color: #2258afb9;
+    text-transform: uppercase;
+    font-size: 25px;
+    padding: 10px 15px;
+    color: #fff;
+  }
+
+  .btn-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 200px;
+
+    position: absolute;
+    top: 55%;
+    left: 17%;
+    a {
+      text-align: center;
+      text-decoration: none;
+      display: block;
+      width: 100%;
+      padding: 10px 15px;
+      margin: 10px;
+      color: #fff;
+      background-color: $red-color;
+
+      &:hover {
+        padding: 8px 15px;
+        background-color: transparent;
+        border: 2px solid $red-color;
+      }
+    }
+  }
+
+  @include breakpoint(small) {
+
+    h1 {
+      font-size: 20px;
+      padding: 10px;
+    }
+
+    .btn-group {
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
+}
+
+.start {
+  padding: 1rem 0 2rem;
+
+  h1 {
+    @include h1Style;
+  }
+
+  &-items {
+    display: flex;
+    flex-direction: row;
+    align-self: center;
+    justify-content: center;
+  }
+
+  a {
+    display: block;
+    position: relative;
+    margin: auto;
+    width: 33.33%;
+    text-align: center;
+    font-size: 170px;
+    text-decoration: none;
+    user-select: none;
+
+    span {
+      width: 230px;
+      display: block;
+      margin: 1rem auto;
+      font-size: 17px;
+      padding: 10px 15px;
+      background-color: $red-color-blur;
+      color: #fff;
+
+      &:hover {
+        background-color: $red-color;
+      }
+    }
+  }
+
+  @include breakpoint(small) {
+
+    &-items {
+      flex-direction: column;
+    }
+
+    a {
+      width: 100%;
+      margin-bottom: 2rem;
+
+      span {
+        width: 165px;
+        margin: 1rem auto;
+        font-size: 15px;
+        padding: 10px 15px;
+      }
+    }
+  }
+}
+
+@keyframes comin {
+  0% {
+    transform: perspective(100px) rotateX(50deg) translate(-50%, 30px);
+  }
+
+  50% {
+    transform: perspective(100px) rotateX(50deg) translate(-50%, 15px);
+  }
+
+  100% {
+    transform: perspective(100px) rotateX(50deg) translate(-50%, 30px);
+  }
+}
+
+.come-in {
+  font-size: 35px;
+  position: absolute;
+  color: $red-color;
+  bottom: 0;
+  left: 50%;
+  transform: perspective(100px) rotateX(50deg) translateX(-50%);
+  animation: comin 1s infinite linear;
+}

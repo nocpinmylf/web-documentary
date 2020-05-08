@@ -1,4 +1,6 @@
 @import "content";
+@import "overview";
+@import "first";
 
 @keyframes spin {
   from {
@@ -66,6 +68,11 @@
   opacity: 1;
   box-shadow: 0 0 3px 0 #646464;
   transition: all 0.3s;
+
+  .active {
+    background-color: $red-color;
+    color: #fff !important;
+  }
   
   &::-webkit-scrollbar-thumb {
     background-color: #646464;
@@ -148,6 +155,7 @@ hr {
   }
 }
 
+.intro,
 .item {
   font-weight: bold;
   padding: 1em 0 1em 1em;
@@ -197,7 +205,7 @@ hr {
 
 #embed {
 	width: 100%;
-  height: 100vh;
+  height: 101vh;
   
 }
 
@@ -216,7 +224,7 @@ hr {
 
   &.change {
     left: 1%;
-    transform: rotate(90deg);
+    transform: rotate(180deg);
   }
 
   @include breakpoint(tablet) {
@@ -226,6 +234,5 @@ hr {
   @include breakpoint(small) {
     top: 2%;
     left: 83%;
-    transform: scale(.7);
   }
 }

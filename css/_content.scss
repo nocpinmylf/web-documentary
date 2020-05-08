@@ -27,13 +27,21 @@ $attr-color: #529c23;
   }
 }
 
+h1 {
+  text-align: center;
+}
+
+ol {
+  padding-inline-start: 0;
+}
+
 /* post */
 
 .post {
   font: 17px/1.7 Arial;
   display: block;
-  margin: 0 1em;
-  padding: 1em;
+  margin: 0 1rem;
+  padding: 1rem;
   text-align: justify;
 
   &-title {
@@ -52,13 +60,17 @@ $attr-color: #529c23;
       background-color: $red-color-blur;
       text-decoration: none;
       padding: 10px 15px;
+
+      &:hover {
+        background-color: $red-color;
+      }
     }
   }
   
   @include breakpoint(small) {
     font: 15px/1.5 Arial;
     margin: 0;
-    padding: 0;
+    padding: 0 1rem;
 
     &-title {
       font-size: 25px;
@@ -163,13 +175,10 @@ figure {
 
 }
 
-
-
 /* table */
 table {
   width: 100%;
 }
-
 
 .table {
   border: 1px solid rgb(194, 178, 178);

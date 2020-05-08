@@ -8,15 +8,14 @@
 	<link rel="icon" type=“image/x-icon” href="../res/img/logo.png">
 
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.13.0/css/all.css" crossorigin="anonymous">
-	<link rel="stylesheet" href="../Web_lib/resetcss.css">
 	<link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body class="body">
+<body class="body hide">
 		<!-- left-menu -->
-	<nav class="menu">
+	<nav class="menu hide">
 		<div class="header">
-			<a href="intro.html" target="main" class="logo">
+			<a href="overview.html" target="main" class="logo">
 				<img src="../res/img/logo.png" alt="Logo">
 				<p class="header-title">WebDesign</p>
 			</a>
@@ -30,6 +29,7 @@
 				<input type="search" name="search-box" id="search" placeholder="Nhập Tìm Kiếm">
 			</form>
 				<!-- items -->
+			<a href="intro.html" class="intro" target="main">Tổng quan</a>
 			<a href="" class="item">HTML</a>
 			<div class="sub">
 				<a href="html01.html" target="main" class="sub-item">Giới Thiệu HTML</a>
@@ -50,11 +50,11 @@
 
 		<!-- embed -->
 	<main id="main">
-		<object data="intro.html" name="main" id="embed"></object>
+		<object data="overview.html" name="main" id="embed"></object>
 	</main>
 
 
-	<span id="collapse-btn"><i class="fas fa-bars"></i></span>
+	<span id="collapse-btn" class="change"><i class="fas fa-arrow-left"></i></span>
 	<script defer src="https://use.fontawesome.com/releases/v5.13.0/js/all.js" crossorigin="anonymous"></script>
 	<script defer src="../js/javascript.js"></script>
 </body>
